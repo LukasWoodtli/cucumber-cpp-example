@@ -15,22 +15,8 @@ install:
 - ${CXX} -v
 # Ruby for cucumber
 - rvm use 2.5.1 --install --binary --fuzzy
+- ruby --version
 - gem install bundler
-
-
-addons:
-  apt:
-    # List of whitelisted in travis packages for ubuntu-precise can be found here:
-    #   https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
-    # List of whitelisted in travis apt-sources:
-    #   https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
-    sources:
-    - ubuntu-toolchain-r-test
-    - llvm-toolchain-trusty-5.0
-    packages:
-    - gcc-7
-    - g++-7
-    - clang-5.0
 
 
 compiler:
@@ -44,6 +30,20 @@ matrix:
   exclude:
   - os: osx
     compiler: gcc
+  include:
+  - os: linux
+      addons:
+        apt:
+          update: true
+          sources:
+              - ubuntu-toolchain-r-test
+              - llvm-toolchain-trusty-5.0
+              - sourceline: 'ppa:mhier/libboost-latest'
+          packages:
+              - gcc-7
+              - g++-7
+              - clang-5.0
+              - boost1.67
 
 before_script:
     - git submodule update --init --remote --recursive
