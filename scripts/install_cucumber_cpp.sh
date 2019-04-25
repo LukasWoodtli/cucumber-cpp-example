@@ -13,6 +13,8 @@ mkdir -p "$CUCUMBER_INSTALL_DIR"
 
 cd "$CUCUMBER_SOURCE_DIR"
 
+bundle install
+
 git submodule init
 git submodule update
 

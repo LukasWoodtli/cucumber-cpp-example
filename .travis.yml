@@ -16,7 +16,6 @@ install:
 # Ruby for cucumber
 - rvm use 2.5.1 --install --binary --fuzzy
 - gem install bundler
-- bundle install
 
 
 addons:
