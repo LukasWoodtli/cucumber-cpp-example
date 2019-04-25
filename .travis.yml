@@ -13,6 +13,11 @@ install:
 - echo ${CXX}
 - ${CXX} --version
 - ${CXX} -v
+# Ruby for cucumber
+- rvm use 2.5.1 --install --binary --fuzzy
+- gem install bundler
+- bundle install
+
 
 addons:
   apt:
