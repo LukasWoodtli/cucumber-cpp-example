@@ -1,0 +1,6 @@
+[submodule "third-party/cucumber-cpp"]
+	path = third-party/cucumber-cpp
+	url = https://github.com/cucumber/cucumber-cpp
+[submodule "third-party/catch2"]
+	path = third-party/catch2
+	url = https://github.com/catchorg/Catch2
