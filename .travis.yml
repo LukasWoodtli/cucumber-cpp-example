@@ -49,5 +49,5 @@ before_script:
     - git submodule update --init --remote --recursive
 script:
     - bash -x scripts/install_cucumber_cpp.sh
-
+    - bash -x scripts/build_and_run_tests.sh
 
