@@ -19,6 +19,20 @@ install:
 - gem install bundler
 
 
+addons:
+    apt:
+        update: true
+        sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-trusty-5.0
+            - boost-latest
+        packages:
+            - gcc-7
+            - g++-7
+            - clang-5.0
+            - libboost1.55-all-dev
+
+
 compiler:
 - clang
 - gcc
@@ -30,20 +44,7 @@ matrix:
   exclude:
   - os: osx
     compiler: gcc
-  include:
-  - os: linux
-      addons:
-        apt:
-          update: true
-          sources:
-              - ubuntu-toolchain-r-test
-              - llvm-toolchain-trusty-5.0
-              - boost-latest
-          packages:
-              - gcc-7
-              - g++-7
-              - clang-5.0
-              - libboost1.55-all-dev
+
 
 before_script:
     - git submodule update --init --remote --recursive
