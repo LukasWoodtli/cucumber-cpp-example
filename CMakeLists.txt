@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.9)
 
 project(CucumberCppExample)
 
-find_package(CucumberCpp PATHS "${CMAKE_SOURCE_DIR}/third-party/install/cucumber-cpp/lib/cmake/")
+find_package(CucumberCpp REQUIRED PATHS "${CMAKE_SOURCE_DIR}/third-party/install/cucumber-cpp/lib/cmake/")
 
 find_package(Boost REQUIRED COMPONENTS unit_test_framework program_options system regex filesystem thread)
 
@@ -19,11 +19,10 @@ add_executable(CalculatorSteps
 target_link_libraries(CalculatorSteps
     PRIVATE
         Calc
-        cucumber-cpp
+        CucumberCpp::cucumber-cpp
         Boost::thread
         Boost::unit_test_framework
         Boost::program_options
         Boost::system
         Boost::regex
-        Boost::filesystem
-        CucumberCpp::cucumber-cpp-nomain)
+        Boost::filesystem)
