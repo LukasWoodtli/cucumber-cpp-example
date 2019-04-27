@@ -13,3 +13,6 @@ cd build
 cmake ..
 make -j4
 
+./CalculatorSteps &
+cucumber ../features
+
