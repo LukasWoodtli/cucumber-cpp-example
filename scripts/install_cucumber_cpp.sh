@@ -27,7 +27,7 @@ cmake -DCUKE_ENABLE_EXAMPLES=ON \
       -DBUILD_SHARED_LIBS=ON \
       -DCUKE_DISABLE_E2E_TESTS=ON \
       -DCUKE_DISABLE_GTEST=ON \
-      -DCUKE_DISABLE_QT=ON \
+      -DCUKE_ENABLE_QT=OFF \
       -DCUKE_ENABLE_EXAMPLES=ON \
       ..
 
@@ -35,4 +35,3 @@ make -j4
 make -j4 test
 
 make -j4 install
-
